@@ -1,10 +1,10 @@
-/* 
+# this
 
-   맛보기 
+### 맛보기
 
-*/
-//this는 함수를 호출한 방법에 의해 결정된다.  this는 기본적으로 전역 개체를 참조한다.
+this는 함수를 호출한 방법에 의해 결정된다. this는 기본적으로 전역 개체를 참조한다
 
+```jsx
 const test = {
   prop: 34,
   func: function () {
@@ -15,22 +15,21 @@ console.log(test.func()); // output:34
 
 //window
 console.log(this === window); //true
+```
 
-//this의 값을 한 문맥에서 다른 문맥으로 넘기려면 다음 `call()` 이나 `apply()` 를 사용해야 한다.
-//call,apply의 첫번째 인자는 this로 사용할 객체이다.
+this의 값을 한 문맥에서 다른 문맥으로 넘기려면 다음 `call()` 이나 `apply()` 를 사용해야 한다.
 
-/*
+call,apply의 첫번째 인자는 this로 사용할 객체이다.
 
-  예시
+### 예시
 
-  */
+1. 아버지: 나는 허리가 아프다. ( 나 === 아버지 )
+2. 어머니 : 나는 어깨가 아프다. (나 === 어머니 )
+3. 삼촌: 나는 머리가 아프다. ( 나 === 삼촌 )
 
-//1. 아버지: 나는 허리가 아프다. ( 나  === 아버지 )
-//2. 어머니 : 나는 어깨가 아프다. (나 === 어머니 )
-//3. 삼촌: 나는 머리가 아프다. ( 나 === 삼촌 )
+`자바스크립트에서 this는 여기서 '나'라는 단어와 비슷 하다 어떤 문맥이냐에 따라서 그 의미(값)가 바뀐다.`
 
-// 자바스크립트에서 this는 여기서 '나'라는 단어와 비슷 하다 어떤 문맥이냐에 따라서 그 의미(값)가 바뀐다.
-
+```jsx
 var name = "global name";
 
 function log() {
@@ -44,15 +43,17 @@ var obj = {
 
 log(); //output: global name
 obj.logName; // output: lee
-//this의 값은 this를 사용하는 해당 함수를 어떻게 실행하느냐에 따라 바뀐다.
+```
 
-/*
+this의 값은 this를 사용하는 해당 함수를 어떻게 실행하느냐에 따라 바뀐다.
 
-  this를 사용하는 4가지 방법
+### this를 사용하는 4가지 방법
 
-*/
+---
 
-//1. reguler function call (일반 실행 함수)
+**1. reguler function call (일반 실행 함수)**
+
+```jsx
 // 1-1.
 function foo() {
   console.log(this); //this === global object(브라우저상에서는 window객체)
@@ -60,7 +61,7 @@ function foo() {
 
 foo();
 
-// 1-2.
+////////// 1-2. ///////////
 
 var name = "lee";
 
@@ -76,7 +77,7 @@ function baz() {
 bar();
 //outpiut: lee
 
-// 1-3. **use strict을 사용할 경우
+//////// 1-3. **use strict을 사용할 경우 ////////**
 ("use strict");
 
 var name = "lee";
@@ -86,8 +87,11 @@ function foo() {
 }
 
 foo(); //output: this === undefined
+```
 
-//2. Dot Notation (점 방식)
+**2. Dot Notation (점 방식)**
+
+```jsx
 //2-1.
 var age = 100;
 
@@ -140,12 +144,11 @@ var foo = lee.foo;
 lee.foo(); //output: 28
 kim.foo(); //output: 21
 foo(); //output: 100
+```
 
-/*
+**3.Function.prototype.call, Function.prototype.apply, Function.prototype.bind**
 
-3.Function.prototype.call, Function.prototype.apply, Function.prototype.bind
-
- */
+```jsx
 //3-1.
 var age = 100;
 
@@ -203,12 +206,11 @@ foo(); //output:100
 let bar = foo.bind(lee); //바로 실행되는것이 아니라 대기하고 있다가 할당한 변수가 실행되면 출력이 된다.
 
 bar(); //output:28
+```
 
-/*
+**4. "new" Keyword (생성자 함수)**
 
-**4.   "new" Keyword (생성자 함수)**
-
-*/
+```jsx
 //4-1.
 function foo() {
   console.log(this);
@@ -246,3 +248,4 @@ var kim = new Person("kim coding", 21, "orange");
 
 lee; //output: Person {name: "lee coding", age: 28, color: "red"}
 kim; //output: Person {name: "kim coding", age: 21, color: "orange"}
+```

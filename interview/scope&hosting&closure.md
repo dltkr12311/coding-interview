@@ -1,5 +1,3 @@
-# scope
-
 ![https://image.toast.com/aaaadh/alpha/2016/techblog/javascriptoverview.png](https://image.toast.com/aaaadh/alpha/2016/techblog/javascriptoverview.png)
 
 **클로저에 대한 정의는 없다.** 클로저는 자바스크립트가 채용하고 있는 기술적 기반 혹은 컨셉으로, 자바스크립트는 클로저를 이용하여 스코프적 특징과 일급 객체로서의 함수에 대한 명세를 구현한 것이다.

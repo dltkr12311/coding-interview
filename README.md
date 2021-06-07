@@ -4,3 +4,8 @@
 
 - this
 - prototype
+- scope & hosting & closure
+
+### FrontEnd R&D
+
+- react native CLI

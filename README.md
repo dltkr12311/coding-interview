@@ -6,6 +6,10 @@
 - prototype
 - scope & hosting & closure
 
+### TypeScript 기본 개념
+
+- 기본 개념 정리
+
 ### FrontEnd R&D
 
 - react native CLI
